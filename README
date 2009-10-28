@@ -10,4 +10,4 @@ To use:
 from linkify import linkify
 
 vimeo_link = linkify('http://vimeo.com/12345')
-youtube_link = linkify('http://')
+youtube_link = linkify('http://www.youtube.com/watch?v=AbCd123')
