@@ -5,8 +5,8 @@ from urlparse import urlparse
 def linkify(url, width=400, height=200):
     url = validate_url(url)
 
-    if 'youtube' in url.netloc and '/watch?v=' in url.path:
-    	video_link = generate_tag(url, width, height)
+    if 'youtube' in url.netloc and '/watch' in url.path:
+    	  video_link = generate_tag(url.geturl(), width, height)
     elif 'vimeo' in url.netloc:
         vimeo_url = 'http://vimeo.com/moogaloop.swf?clip_id=' + str(url.path.strip('/')) + '&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=0'
         video_link = generate_tag(vimeo_url, width, height)
