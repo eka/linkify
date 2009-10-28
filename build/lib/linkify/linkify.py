@@ -6,7 +6,8 @@ def linkify(url, width=400, height=200):
     url = validate_url(url)
 
     if 'youtube' in url.netloc and '/watch' in url.path:
-    	  video_link = generate_tag(url.geturl(), width, height)
+        youtube_url = 'http://youtube.com/v/' + str(url.query[2:len(url.query)])
+        video_link = generate_tag(youtube_url, width, height)
     elif 'vimeo' in url.netloc:
         vimeo_url = 'http://vimeo.com/moogaloop.swf?clip_id=' + str(url.path.strip('/')) + '&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=1&amp;show_portrait=0&amp;color=&amp;fullscreen=0'
         video_link = generate_tag(vimeo_url, width, height)
@@ -23,5 +24,5 @@ def validate_url(url):
         print "Not a valid URL"
 
 def generate_tag(video_link, width, height):
-    object_tag = '<object width="' + str(width) + '" height="' + str(height) + '"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="' + video_link + '"/><param name="wmode" value="transparent"/><embed src="' + video_link + '" type="application/x-shockwave-flash" wmode="transparent" allowfullscreen="true" allowscriptaccess="always" width="' + str(width)  + '" height="' + str(height) + '" /></object>'
+    object_tag = '<object width="' + str(width) + '" height="' + str(height) + '"><param name="movie" value="' + video_link + '"/><param name="wmode" value="transparent"/><embed src="' + video_link + '" type="application/x-shockwave-flash" wmode="transparent" width="' + str(width)  + '" height="' + str(height) + '" /></object>'
     return object_tag

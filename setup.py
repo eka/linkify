@@ -1,6 +1,6 @@
 from setuptools import setup
 
 setup(name='linkify',
-version='1.1',
+version='1.4',
 packages=['linkify',],
 )
