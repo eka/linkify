@@ -1,13 +1,10 @@
 Creates embedded videos from youtube and vimeo links
-
-To install clone the following git url:
-git://github.com/ednapiranha/Linkify.git
-
-change to the directory linkify and type in the following on the command line:
+ 
+Install easy_install and type in the following on the command line:
 easy_install linkify
-
+ 
 To use:
 from linkify import linkify
-
+ 
 vimeo_link = linkify('http://vimeo.com/12345')
-youtube_link = linkify('http://www.youtube.com/watch?v=AbCd123')
+youtube_link = linkify('http://www.youtube.com/watch?v=AbCd123', 300, 200)
