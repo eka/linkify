@@ -1,9 +1,0 @@
-README
-setup.py
-linkify/__init__.py
-linkify/linkify.py
-linkify/setup.py
-linkify.egg-info/PKG-INFO
-linkify.egg-info/SOURCES.txt
-linkify.egg-info/dependency_links.txt
-linkify.egg-info/top_level.txt
